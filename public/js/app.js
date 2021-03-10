@@ -9,7 +9,7 @@ form.addEventListener("submit", (e) => {
   location.textContent = "Getting Location";
   fetch(
     // `http://api.weatherstack.com/current?access_key=1247f1b0348455c20a35a28a91e553bb&query=${input}`
-    `http://localhost:3000/weather?address=${input}`
+    `/weather?address=${input}`
   )
     .then((res) => {
       res.json().then((data) => {
