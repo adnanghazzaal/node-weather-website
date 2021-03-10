@@ -38,9 +38,9 @@ app.get("/weather", (req, res) => {
             errorMessage: `Cannot Find ${req.query.address}`,
           });
         } else {
-          foreCast(latitude, longitude, (error, response) => {
+          foreCast(latitude, longitude, (error, { current }) => {
             res.send({
-              weather: response,
+              weather: current,
               location: location,
             });
           });

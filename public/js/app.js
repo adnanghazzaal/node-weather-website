@@ -36,7 +36,28 @@ form.addEventListener("submit", (e) => {
           //   <p>Visibility: ${data.current.visibility}</p>
 
           //   `;
-          weather.textContent = data.weather;
+
+          const {
+            feelslike,
+            humidity,
+            pressure,
+            temperature,
+            visibility,
+            weather_icons,
+            weather_descriptions,
+          } = data.weather;
+          weather.innerHTML = `
+            <img style = "max-width: 100px;"src="${weather_icons[0]}"></img>
+            <h4>${weather_descriptions}</h4>
+            </br>
+          <ul>
+          <li>FeelsLike: ${feelslike}</li>
+          <li>Humidity ${humidity}</li>
+          <li>Pressure: ${pressure}</li>
+          <li>Temperature: ${temperature}</li>
+          <li>Visibility: ${visibility}</li>
+          </ul>
+          `;
         }
       });
     })
