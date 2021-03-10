@@ -1,4 +1,3 @@
-console.log(`Client JS Loaded`);
 const form = document.getElementById("form");
 
 // console.log(form);
